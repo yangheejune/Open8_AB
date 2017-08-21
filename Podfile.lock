@@ -1,0 +1,19 @@
+PODS:
+  - Alamofire (4.5.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - Segmentio (2.1.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - AlamofireImage
+  - Segmentio (~> 2.1)
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  Segmentio: f85114993e305bd9c522952eef8c2c4db732fd17
+
+PODFILE CHECKSUM: 7029f261cc51611fdcfc0185db68c1bc0ff4c239
+
+COCOAPODS: 1.2.1
