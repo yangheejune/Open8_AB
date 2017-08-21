@@ -69,91 +69,91 @@ class ExampleViewController: UIViewController {
     
     // Example viewControllers
     
-    fileprivate func preparedViewControllers() -> [ContentViewController] {
-        let HomeController = ContentViewController.create()
-        HomeController.disaster = Disaster(
-            cardName: "Home",
-            //hintLabel: Hints.home,
-            hintImage: UIImage(named: "home"),
-            hintNameLabel: "가게 이름",
-            hintGPSLabel: "주소를 적어주면 됨",
-            hintDistanceLabel: "거리를 적어주면됨",
-            hintGoodLabel: "취양수를 적어주면 된다",
-            hintRecommendationLabel: "추천수를 적어주면 된다."
-        )
+    fileprivate func preparedViewControllers() -> [UIViewController] {
+        let HomeController = MainHomeViewController.create()
+//        HomeController.disaster = Disaster(
+//            cardName: "Home",
+//            //hintLabel: Hints.home,
+//            hintImage: UIImage(named: "home"),
+//            hintNameLabel: "가게 이름",
+//            hintGPSLabel: "주소를 적어주면 됨",
+//            hintDistanceLabel: "거리를 적어주면됨",
+//            hintGoodLabel: "취양수를 적어주면 된다",
+//            hintRecommendationLabel: "추천수를 적어주면 된다."
+//        )
         
         let
-        RestaurantController = ContentViewController.create()
-        RestaurantController.disaster = Disaster(
-            cardName: "음식점",
-            //hintLabel: Hints.restaurant,
-            hintImage: UIImage(named: "restaurant"),
-            hintNameLabel: "가게 이름",
-            hintGPSLabel: "주소를 적어주면 됨",
-            hintDistanceLabel: "거리를 적어주면됨",
-            hintGoodLabel: "취양수를 적어주면 된다",
-            hintRecommendationLabel: "추천수를 적어주면 된다."
-        )
+        RestaurantController = RestaurantViewController.create()
+//        RestaurantController.disaster = Disaster(
+//            cardName: "음식점",
+//            //hintLabel: Hints.restaurant,
+//            hintImage: UIImage(named: "restaurant"),
+//            hintNameLabel: "가게 이름",
+//            hintGPSLabel: "주소를 적어주면 됨",
+//            hintDistanceLabel: "거리를 적어주면됨",
+//            hintGoodLabel: "취양수를 적어주면 된다",
+//            hintRecommendationLabel: "추천수를 적어주면 된다."
+//        )
         
-        let CafeController = ContentViewController.create()
-        CafeController.disaster = Disaster(
-            cardName: "카페",
-            //hintLabel: Hints.cafe,
-            hintImage: UIImage(named: "cafe"),
-            hintNameLabel: "가게 이름",
-            hintGPSLabel: "주소를 적어주면 됨",
-            hintDistanceLabel: "거리를 적어주면됨",
-            hintGoodLabel: "취양수를 적어주면 된다",
-            hintRecommendationLabel: "추천수를 적어주면 된다."
-        )
+        let CafeController = CafeViewController.create()
+//        CafeController.disaster = Disaster(
+//            cardName: "카페",
+//            //hintLabel: Hints.cafe,
+//            hintImage: UIImage(named: "cafe"),
+//            hintNameLabel: "가게 이름",
+//            hintGPSLabel: "주소를 적어주면 됨",
+//            hintDistanceLabel: "거리를 적어주면됨",
+//            hintGoodLabel: "취양수를 적어주면 된다",
+//            hintRecommendationLabel: "추천수를 적어주면 된다."
+//        )
         
-        let BarController = ContentViewController.create()
-        BarController.disaster = Disaster(
-            cardName: "술집",
-            //hintLabel: Hints.bar,
-            hintImage: UIImage(named: "bar"),
-            hintNameLabel: "가게 이름",
-            hintGPSLabel: "주소를 적어주면 됨",
-            hintDistanceLabel: "거리를 적어주면됨",
-            hintGoodLabel: "취양수를 적어주면 된다",
-            hintRecommendationLabel: "추천수를 적어주면 된다."
-        )
+        let BarController = BarViewController.create()
+//        BarController.disaster = Disaster(
+//            cardName: "술집",
+//            //hintLabel: Hints.bar,
+//            hintImage: UIImage(named: "bar"),
+//            hintNameLabel: "가게 이름",
+//            hintGPSLabel: "주소를 적어주면 됨",
+//            hintDistanceLabel: "거리를 적어주면됨",
+//            hintGoodLabel: "취양수를 적어주면 된다",
+//            hintRecommendationLabel: "추천수를 적어주면 된다."
+//        )
         
-        let HairNailController = ContentViewController.create()
-        HairNailController.disaster = Disaster(
-            cardName: "헤어네일",
-            //hintLabel: Hints.hairnail,
-            hintImage: UIImage(named: "hairnail"),
-            hintNameLabel: "가게 이름",
-            hintGPSLabel: "주소를 적어주면 됨",
-            hintDistanceLabel: "거리를 적어주면됨",
-            hintGoodLabel: "취양수를 적어주면 된다",
-            hintRecommendationLabel: "추천수를 적어주면 된다."
-        )
+        let HairNailController = HairNailViewController.create()
+//        HairNailController.disaster = Disaster(
+//            cardName: "헤어네일",
+//            //hintLabel: Hints.hairnail,
+//            hintImage: UIImage(named: "hairnail"),
+//            hintNameLabel: "가게 이름",
+//            hintGPSLabel: "주소를 적어주면 됨",
+//            hintDistanceLabel: "거리를 적어주면됨",
+//            hintGoodLabel: "취양수를 적어주면 된다",
+//            hintRecommendationLabel: "추천수를 적어주면 된다."
+//        )
         
-        let BodyHealthController = ContentViewController.create()
-        BodyHealthController.disaster = Disaster(
-            cardName: "바디헬스",
-            //hintLabel: Hints.bodyhealth,
-            hintImage: UIImage(named: "bodyhealth"),
-            hintNameLabel: "가게 이름",
-            hintGPSLabel: "주소를 적어주면 됨",
-            hintDistanceLabel: "거리를 적어주면됨",
-            hintGoodLabel: "취양수를 적어주면 된다",
-            hintRecommendationLabel: "추천수를 적어주면 된다."
-        )
+        let BodyHealthController = BodyHealthViewController.create()
+//        BodyHealthController.disaster = Disaster(
+//            cardName: "바디헬스",
+//            //hintLabel: Hints.bodyhealth,
+//            hintImage: UIImage(named: "bodyhealth"),
+//            hintNameLabel: "가게 이름",
+//            hintGPSLabel: "주소를 적어주면 됨",
+//            hintDistanceLabel: "거리를 적어주면됨",
+//            hintGoodLabel: "취양수를 적어주면 된다",
+//            hintRecommendationLabel: "추천수를 적어주면 된다."
+//        )
         
-        let FashionACCController = ContentViewController.create()
-        FashionACCController.disaster = Disaster(
-            cardName: "패션잡화",
-            //hintLabel: Hints.fashionacc,
-            hintImage: UIImage(named: "fashionacc"),
-            hintNameLabel: "가게 이름",
-            hintGPSLabel: "주소를 적어주면 됨",
-            hintDistanceLabel: "거리를 적어주면됨",
-            hintGoodLabel: "취양수를 적어주면 된다",
-            hintRecommendationLabel: "추천수를 적어주면 된다."
-        )
+        let FashionACCController = FashionAccViewController.create()
+//        FashionACCController.disaster = Disaster(
+//            cardName: "패션잡화",
+//            //hintLabel: Hints.fashionacc,
+//            hintImage: UIImage(named: "fashionacc"),
+//            hintNameLabel: "가게 이름",
+//            hintGPSLabel: "주소를 적어주면 됨",
+//            hintDistanceLabel: "거리를 적어주면됨",
+//            hintGoodLabel: "취양수를 적어주면 된다",
+//            hintRecommendationLabel: "추천수를 적어주면 된다."
+//        )
         
         return [
             HomeController,

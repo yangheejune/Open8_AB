@@ -50,7 +50,7 @@
         <!--View Controller-->
         <scene sceneID="enf-dP-awV">
             <objects>
-                <viewController id="9Iu-BB-ohi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerID" id="9Iu-BB-ohi" customClass="ViewController" customModule="Open8_AB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Qc-We-Pvr"/>
                         <viewControllerLayoutGuide type="bottom" id="HdM-YZ-w9F"/>

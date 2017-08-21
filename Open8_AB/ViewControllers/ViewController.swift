@@ -10,6 +10,8 @@ import UIKit
 import Segmentio
 
 class ViewController: UIViewController {
+    
+     var indexNumber: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()

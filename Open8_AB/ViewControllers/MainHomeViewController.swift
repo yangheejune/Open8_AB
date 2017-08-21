@@ -86,7 +86,7 @@ extension MainHomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController:RestaurantDetailViewController = storyboard?.instantiateViewController(withIdentifier : RestaurantID) as! RestaurantDetailViewController
+        let viewController:ViewController = storyboard?.instantiateViewController(withIdentifier : "ViewControllerID") as! ViewController
         self.navigationController?.pushViewController(viewController, animated: true)
         viewController.indexNumber = indexPath.row
     }
