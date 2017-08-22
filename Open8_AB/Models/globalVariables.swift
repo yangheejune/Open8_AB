@@ -26,6 +26,7 @@ let DEFINE_BAR          = 2
 let DEFINE_HAIRNAIL     = 3
 let DEFINE_FASHIONACC   = 4
 let DEFINE_BODYHEALTH   = 5
+let DEFINE_ALL          = 6
 
 
 class BusinnessItem {

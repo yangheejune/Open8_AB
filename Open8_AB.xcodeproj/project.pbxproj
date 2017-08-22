@@ -34,6 +34,7 @@
 		88EEF6FB1F331EC5008059E6 /* FashionAccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6F51F331EC5008059E6 /* FashionAccViewController.swift */; };
 		88EEF6FC1F331EC5008059E6 /* HairNailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6F61F331EC5008059E6 /* HairNailViewController.swift */; };
 		88EEF6FD1F331EC5008059E6 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6F71F331EC5008059E6 /* RestaurantViewController.swift */; };
+		AB1740BD1F4C1982000DFF7D /* InfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1740BC1F4C1982000DFF7D /* InfomationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		88EEF6F71F331EC5008059E6 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		8ABC2428C9A4DFD5BFE1BB74 /* Pods-Open8_AB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open8_AB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Open8_AB/Pods-Open8_AB.debug.xcconfig"; sourceTree = "<group>"; };
 		A094A4611892D807E3937E3C /* Pods_Open8_AB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Open8_AB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB1740BC1F4C1982000DFF7D /* InfomationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfomationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		880E3D651F1DE0F400C3566C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AB1740BC1F4C1982000DFF7D /* InfomationViewController.swift */,
 				88EEF6F21F331EC5008059E6 /* BarViewController.swift */,
 				88EEF6F31F331EC5008059E6 /* BodyHealthViewController.swift */,
 				88EEF6F41F331EC5008059E6 /* CafeViewController.swift */,
@@ -417,6 +420,7 @@
 				880E3D5F1F1DE06100C3566C /* Hints.swift in Sources */,
 				88EEF6FA1F331EC5008059E6 /* CafeViewController.swift in Sources */,
 				880E3D6D1F1DE0F400C3566C /* EmbedContainerViewController.swift in Sources */,
+				AB1740BD1F4C1982000DFF7D /* InfomationViewController.swift in Sources */,
 				880E3D6E1F1DE0F400C3566C /* ExampleViewController.swift in Sources */,
 				880E3D701F1DE0F400C3566C /* SideMenuViewController.swift in Sources */,
 				88EEF6FC1F331EC5008059E6 /* HairNailViewController.swift in Sources */,

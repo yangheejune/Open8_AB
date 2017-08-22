@@ -8,10 +8,13 @@
 
 import UIKit
 import MapKit
+import AlamofireImage
 
 class InfomationViewController: UIViewController {
     var indexNumber: Int = 0
     var type: Int = 0
+    var Business_Type = [BusinnessItem]()
+
 
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var infoScrollView: UIScrollView!
@@ -19,9 +22,11 @@ class InfomationViewController: UIViewController {
     @IBOutlet weak var infoBusinessLabel: UILabel!
     @IBOutlet weak var infoText: UITextView!
     @IBOutlet weak var infoBusinessMap: MKMapView!
+    @IBOutlet weak var LableKm: UILabel!
+    @IBOutlet weak var LableLoveCount: UILabel!
+    @IBOutlet weak var LableBookMake: UILabel!
     
-    
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -30,8 +35,25 @@ class InfomationViewController: UIViewController {
         infoScrollView.contentSize = infoView.frame.size
         infoScrollView.addSubview(infoView)
         
-        setInfo()
-        DetailView()
+        switch type {
+            case DEFINE_RESTAURANT:
+                Business_Type = Restaurant
+            case DEFINE_CAFE:
+                Business_Type = Cafe
+            case DEFINE_BAR:
+                Business_Type = Bar
+            case DEFINE_HAIRNAIL:
+                Business_Type = HairNail
+            case DEFINE_BODYHEALTH:
+                Business_Type = BodyHealth
+            case DEFINE_FASHIONACC:
+                Business_Type = FashionAcc
+        default:
+            Business_Type = businness
+        }
+        
+        setInfo(Business_Type: Business_Type)
+        DetailView(Business_Type: Business_Type)
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,35 +78,30 @@ class InfomationViewController: UIViewController {
         infoBusinessMap.addAnnotation(annotation)
     }
     
-    func setInfo(){
-        infoBusinessLabel.text = businness[indexNumber].name
+    func setInfo(Business_Type: [BusinnessItem]){
+        infoBusinessLabel.text = Business_Type[indexNumber].name
         
         //openTime.text = businness[indexNumber].open
         //closeTime.text = businness[indexNumber].close
         //telNumber.text = businness[indexNumber].tel
         
-        setAnnotation(latitude: Double(businness[indexNumber].lat)!, longitude: Double(businness[indexNumber].lng)!, delta: 1, title: businness[indexNumber].name, subtitle: businness[indexNumber].areaD)
-        
+        setAnnotation(latitude: Double(Business_Type[indexNumber].lat)!, longitude: Double(Business_Type[indexNumber].lng)!, delta: 1, title: Business_Type[indexNumber].name, subtitle: Business_Type[indexNumber].areaD)
     }
     
-    func DetailView(){
-        infoBusinessLabel.text = Restaurant[indexNumber].name
-        let tvlat = Double(Restaurant[indexNumber].lat)
-        let tvlng = Double(Restaurant[indexNumber].lng)
+    func DetailView(Business_Type: [BusinnessItem]){
+        
+        infoBusinessLabel.text = Business_Type[indexNumber].name
+        let tvlat = Double(Business_Type[indexNumber].lat)
+        let tvlng = Double(Business_Type[indexNumber].lng)
         LableKm.text = "\(distance(lat1: glat, lng1: glng, lat2: tvlat!, lng2: tvlng!))km"
-        LableLoveCount.text = Restaurant[indexNumber].like
-        LableBookMake.text = Restaurant[indexNumber].favorite
+        LableLoveCount.text = Business_Type[indexNumber].like
+        LableBookMake.text = Business_Type[indexNumber].favorite
         
-        let fullUrl = "http://open8.vps.phps.kr/open8_re/shopImg/" + Restaurant[indexNumber].id + "/shopImg0.png"
+        let fullUrl = "http://open8.vps.phps.kr/open8_re/shopImg/" + Business_Type[indexNumber].id + "/shopImg0.png"
         let url = NSURL(string: fullUrl)
-        let data = NSData(contentsOf: url! as URL) as Data?
-        if data != nil
-        {
-            UIView.image = UIImage(data:data!)
-        }
+        infoImageView.af_setImage(withURL: url! as URL, placeholderImage: UIImage(named:"loader"), filter: nil, imageTransition: .crossDissolve(0.5), runImageTransitionIfCached: true, completion: nil)
         
-        setAnnotation(latitude: Double(businness[indexNumber].lat)!, longitude: Double(businness[indexNumber].lng)!, delta: 1, title: businness[indexNumber].name, subtitle: businness[indexNumber].areaD)
-
+        setAnnotation(latitude: Double(Business_Type[indexNumber].lat)!, longitude: Double(Business_Type[indexNumber].lng)!, delta: 1, title: Business_Type[indexNumber].name, subtitle: Business_Type[indexNumber].areaD)
     }
     
     /*

@@ -27,12 +27,9 @@ class MainHomeTableViewCell: UITableViewCell {
     
 }
 
-class MainHomeViewController: UIViewController {
-    
-    //@IBOutlet fileprivate weak var cardNameLabel: UILabel!
+class MainHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
     @IBOutlet fileprivate weak var hintTableView: UITableView!
-    //@IBOutlet fileprivate weak var bottomCardConstraint: NSLayoutConstraint!
-    //@IBOutlet fileprivate weak var heightConstraint: NSLayoutConstraint!
     
     var disaster: Disaster?
     fileprivate var hintLabel: [String]?
@@ -52,11 +49,12 @@ class MainHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hintTableView.allowsSelection = true
+        hintTableView.delegate = self
+        hintTableView.dataSource = self
+        
     }
-    
-}
-
-extension MainHomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return hints?.count ?? 0
@@ -67,7 +65,7 @@ extension MainHomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainHomeTableViewCell
-
+        
         cell.hintNameLabel.text = businness[indexPath.row].name
         
         let fullUrl = "http://open8.vps.phps.kr/open8_re/shopImg/" + businness[indexPath.row].id + "/shopImg0.png"
@@ -81,13 +79,15 @@ extension MainHomeViewController: UITableViewDataSource {
         let tvlat = Double(businness[indexPath.row].lat)
         let tvlng = Double(businness[indexPath.row].lng)
         cell.hintDistanceLabel.text = "\(distance(lat1: glat, lng1: glng, lat2: tvlat!, lng2: tvlng!))km"
-
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController:ViewController = storyboard?.instantiateViewController(withIdentifier : "ViewControllerID") as! ViewController
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier : "Infomation") as! InfomationViewController
         self.navigationController?.pushViewController(viewController, animated: true)
         viewController.indexNumber = indexPath.row
+        viewController.type = DEFINE_ALL
     }
+
 }
