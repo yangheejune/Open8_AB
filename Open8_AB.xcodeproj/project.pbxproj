@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2AE72CE81A0682107D788F34 /* Pods_Open8_AB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A094A4611892D807E3937E3C /* Pods_Open8_AB.framework */; };
+		66DEE0D60804FB15A07C796B /* Pods_Open8_AB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5E3479697CC2B9DEA06502 /* Pods_Open8_AB.framework */; };
 		880E3CAF1F1DC7F400C3566C /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E3CAB1F1DC7F400C3566C /* String+Convenience.swift */; };
 		880E3CB01F1DC7F400C3566C /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E3CAC1F1DC7F400C3566C /* UIColor+RGB.swift */; };
 		880E3CB11F1DC7F400C3566C /* UIFont+ExampleFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E3CAD1F1DC7F400C3566C /* UIFont+ExampleFonts.swift */; };
@@ -34,6 +34,8 @@
 		88EEF6FB1F331EC5008059E6 /* FashionAccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6F51F331EC5008059E6 /* FashionAccViewController.swift */; };
 		88EEF6FC1F331EC5008059E6 /* HairNailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6F61F331EC5008059E6 /* HairNailViewController.swift */; };
 		88EEF6FD1F331EC5008059E6 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6F71F331EC5008059E6 /* RestaurantViewController.swift */; };
+		ABE0434F1F59B59B006D5045 /* InfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE0434E1F59B59B006D5045 /* InfomationViewController.swift */; };
+		ABE043511F59B5A6006D5045 /* RecentlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE043501F59B5A6006D5045 /* RecentlyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		824572D6CCC2E2BD8F7AF546 /* Pods-Open8_AB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open8_AB.release.xcconfig"; path = "Pods/Target Support Files/Pods-Open8_AB/Pods-Open8_AB.release.xcconfig"; sourceTree = "<group>"; };
+		25A6810F80B5818C87942EA1 /* Pods-Open8_AB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open8_AB.release.xcconfig"; path = "Pods/Target Support Files/Pods-Open8_AB/Pods-Open8_AB.release.xcconfig"; sourceTree = "<group>"; };
+		55522ECD15F3F8728CCF6A15 /* Pods-Open8_AB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open8_AB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Open8_AB/Pods-Open8_AB.debug.xcconfig"; sourceTree = "<group>"; };
 		880E3CAB1F1DC7F400C3566C /* String+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		880E3CAC1F1DC7F400C3566C /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 		880E3CAD1F1DC7F400C3566C /* UIFont+ExampleFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+ExampleFonts.swift"; sourceTree = "<group>"; };
@@ -78,8 +81,9 @@
 		88EEF6F51F331EC5008059E6 /* FashionAccViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FashionAccViewController.swift; sourceTree = "<group>"; };
 		88EEF6F61F331EC5008059E6 /* HairNailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairNailViewController.swift; sourceTree = "<group>"; };
 		88EEF6F71F331EC5008059E6 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
-		8ABC2428C9A4DFD5BFE1BB74 /* Pods-Open8_AB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open8_AB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Open8_AB/Pods-Open8_AB.debug.xcconfig"; sourceTree = "<group>"; };
-		A094A4611892D807E3937E3C /* Pods_Open8_AB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Open8_AB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABE0434E1F59B59B006D5045 /* InfomationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfomationViewController.swift; sourceTree = "<group>"; };
+		ABE043501F59B5A6006D5045 /* RecentlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentlyViewController.swift; sourceTree = "<group>"; };
+		EB5E3479697CC2B9DEA06502 /* Pods_Open8_AB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Open8_AB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AE72CE81A0682107D788F34 /* Pods_Open8_AB.framework in Frameworks */,
+				66DEE0D60804FB15A07C796B /* Pods_Open8_AB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,23 +105,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		160531C0A9DA470869EB95A0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8ABC2428C9A4DFD5BFE1BB74 /* Pods-Open8_AB.debug.xcconfig */,
-				824572D6CCC2E2BD8F7AF546 /* Pods-Open8_AB.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		741589AC4B7553BDA674E213 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A094A4611892D807E3937E3C /* Pods_Open8_AB.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		880E3CAA1F1DC7C300C3566C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +150,8 @@
 		880E3D651F1DE0F400C3566C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				ABE043501F59B5A6006D5045 /* RecentlyViewController.swift */,
+				ABE0434E1F59B59B006D5045 /* InfomationViewController.swift */,
 				88EEF6F21F331EC5008059E6 /* BarViewController.swift */,
 				88EEF6F31F331EC5008059E6 /* BodyHealthViewController.swift */,
 				88EEF6F41F331EC5008059E6 /* CafeViewController.swift */,
@@ -212,8 +201,8 @@
 				886FC77E1F1C9ED4001581FE /* Open8_AB */,
 				886FC7931F1C9ED4001581FE /* Open8_ABTests */,
 				886FC77D1F1C9ED4001581FE /* Products */,
-				160531C0A9DA470869EB95A0 /* Pods */,
-				741589AC4B7553BDA674E213 /* Frameworks */,
+				88D8C336A003332B7A19EF89 /* Pods */,
+				A1035ACE9ACBD1F40009168A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,6 +232,23 @@
 			path = Open8_ABTests;
 			sourceTree = "<group>";
 		};
+		88D8C336A003332B7A19EF89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55522ECD15F3F8728CCF6A15 /* Pods-Open8_AB.debug.xcconfig */,
+				25A6810F80B5818C87942EA1 /* Pods-Open8_AB.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A1035ACE9ACBD1F40009168A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB5E3479697CC2B9DEA06502 /* Pods_Open8_AB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,12 +256,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 886FC7991F1C9ED4001581FE /* Build configuration list for PBXNativeTarget "Open8_AB" */;
 			buildPhases = (
-				72E76DCA8ABFF3D6F8CE9DE3 /* [CP] Check Pods Manifest.lock */,
+				A6453141A94CF1B8B4DAB91C /* [CP] Check Pods Manifest.lock */,
 				886FC7781F1C9ED4001581FE /* Sources */,
 				886FC7791F1C9ED4001581FE /* Frameworks */,
 				886FC77A1F1C9ED4001581FE /* Resources */,
-				4C028C2F26E39C18E9ED814A /* [CP] Embed Pods Frameworks */,
-				E6FFDD88375377FA6355C82E /* [CP] Copy Pods Resources */,
+				1E3E7050A2B14E162F7D3648 /* [CP] Embed Pods Frameworks */,
+				1B7D9C723E372C485E1C07A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -347,37 +353,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4C028C2F26E39C18E9ED814A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Open8_AB/Pods-Open8_AB-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		72E76DCA8ABFF3D6F8CE9DE3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E6FFDD88375377FA6355C82E /* [CP] Copy Pods Resources */ = {
+		1B7D9C723E372C485E1C07A3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,6 +368,50 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Open8_AB/Pods-Open8_AB-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1E3E7050A2B14E162F7D3648 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Open8_AB/Pods-Open8_AB-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Open8_AB/Pods-Open8_AB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6453141A94CF1B8B4DAB91C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Open8_AB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -403,6 +423,7 @@
 				880E3CBB1F1DDEB700C3566C /* SegmentioBuilder.swift in Sources */,
 				88EEF6F91F331EC5008059E6 /* BodyHealthViewController.swift in Sources */,
 				88EEF6FB1F331EC5008059E6 /* FashionAccViewController.swift in Sources */,
+				ABE043511F59B5A6006D5045 /* RecentlyViewController.swift in Sources */,
 				880E3CB01F1DC7F400C3566C /* UIColor+RGB.swift in Sources */,
 				880E3D6F1F1DE0F400C3566C /* HomeViewController.swift in Sources */,
 				880E3D741F1DE11300C3566C /* AppDelegate.swift in Sources */,
@@ -417,6 +438,7 @@
 				880E3D5F1F1DE06100C3566C /* Hints.swift in Sources */,
 				88EEF6FA1F331EC5008059E6 /* CafeViewController.swift in Sources */,
 				880E3D6D1F1DE0F400C3566C /* EmbedContainerViewController.swift in Sources */,
+				ABE0434F1F59B59B006D5045 /* InfomationViewController.swift in Sources */,
 				880E3D6E1F1DE0F400C3566C /* ExampleViewController.swift in Sources */,
 				880E3D701F1DE0F400C3566C /* SideMenuViewController.swift in Sources */,
 				88EEF6FC1F331EC5008059E6 /* HairNailViewController.swift in Sources */,
@@ -540,7 +562,7 @@
 		};
 		886FC79A1F1C9ED4001581FE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8ABC2428C9A4DFD5BFE1BB74 /* Pods-Open8_AB.debug.xcconfig */;
+			baseConfigurationReference = 55522ECD15F3F8728CCF6A15 /* Pods-Open8_AB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S66VGVB29H;
@@ -554,7 +576,7 @@
 		};
 		886FC79B1F1C9ED4001581FE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 824572D6CCC2E2BD8F7AF546 /* Pods-Open8_AB.release.xcconfig */;
+			baseConfigurationReference = 25A6810F80B5818C87942EA1 /* Pods-Open8_AB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S66VGVB29H;

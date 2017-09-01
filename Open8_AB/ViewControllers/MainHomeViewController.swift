@@ -59,7 +59,7 @@ class MainHomeViewController: UIViewController, UITableViewDataSource, UITableVi
         let viewController = self.storyboard?.instantiateViewController(withIdentifier : "Infomation") as! InfomationViewController
         self.navigationController?.pushViewController(viewController, animated: true)
         viewController.indexNumber = indexPath.row
-        viewController.type = DEFINE_RESTAURANT
+        viewController.type = DEFINE_ALL
         
         // select businness item DB add
         addBusinness(businness: businness[indexPath.row])
