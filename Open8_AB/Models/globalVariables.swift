@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Realm
+import RealmSwift
 
 var ViewIndex = Int()
 var businness = [BusinnessItem]()       // 전체 업체
@@ -26,7 +28,9 @@ let DEFINE_BAR          = 2
 let DEFINE_HAIRNAIL     = 3
 let DEFINE_FASHIONACC   = 4
 let DEFINE_BODYHEALTH   = 5
+let DEFINE_ALL          = 6
 
+let realm = try! Realm()
 
 class BusinnessItem {
     var id = String()       // ex) aaa@aaa.co.kr
@@ -82,14 +86,42 @@ class BusinnessItem {
     }
 }
 
+class clBusinness : Object {
+    dynamic var id = String()
+    dynamic var name = String()     // ex) 미즈김 에스테틱 & 스파
+    dynamic var areaL = String()    // ex) 서울특별시
+    dynamic var areaM = String()    // ex) 은평구
+    dynamic var areaS = String()    // ex) 대조동
+    dynamic var areaD = String()    // ex) 서울특별시 은평구 통일로 739
+    dynamic var areaD_D = String()  // ex) 오산상가 302호
+    dynamic var lat = String()      // ex) 좌표
+    dynamic var lng = String()      // ex) 좌표
+    dynamic var tel = String()      // ex) 전화번호
+    dynamic var type = String()
+    dynamic var typeA = String()
+    dynamic var typeB = String()
+    dynamic var imgCnt = String()
+    dynamic var open = String()     // ex) 문여는 시간(09:00)
+    dynamic var close = String()    // ex) 문닫는 시간(19:00)
+    dynamic var day = String()      // ex) 일하는 날짜(월화수목금)
+    dynamic var state = String()
+    dynamic var like = String()
+    dynamic var favorite = String()
+    dynamic var c1 = String()
+    dynamic var c2 = String()
+    dynamic var t1 = String()
+    dynamic var score = String()
+}
+
+
 // 구 삼각법을 기준으로 대원거리(m단위) 요청
 func distance(lat1: Double, lng1: Double, lat2: Double, lng2: Double) -> Double {
     
     // 위도,경도를 라디안으로 변환
-    let rlat1 = lat1 * M_PI / 180
-    let rlng1 = lng1 * M_PI / 180
-    let rlat2 = lat2 * M_PI / 180
-    let rlng2 = lng2 * M_PI / 180
+    let rlat1 = lat1 * .pi / 180
+    let rlng1 = lng1 * .pi / 180
+    let rlat2 = lat2 * .pi / 180
+    let rlng2 = lng2 * .pi / 180
     
     // 2점의 중심각(라디안) 요청
     let a =
@@ -113,6 +145,43 @@ extension Double { /// Rounds the double to decimal places value
         let divisor = pow(10.0, Double(places))
         return Darwin.round(self * divisor) / divisor
     }
+}
+
+func addBusinness(businness: BusinnessItem) {
+    let realmBusinness = clBusinness()
+    realmBusinness.id = businness.id
+    print("realmBusinness.id \(realmBusinness.id)")
+    
+    realmBusinness.name = businness.name
+    realmBusinness.areaL = businness.areaL
+    realmBusinness.areaM = businness.areaM
+    realmBusinness.areaS = businness.areaS
+    realmBusinness.areaD = businness.areaD
+    realmBusinness.areaD_D = businness.areaD_D
+    realmBusinness.lat = businness.lat
+    realmBusinness.lng = businness.lng
+    realmBusinness.tel = businness.tel
+    realmBusinness.type = businness.type
+    realmBusinness.typeA = businness.typeA
+    realmBusinness.typeB = businness.typeB
+    realmBusinness.imgCnt = businness.imgCnt
+    realmBusinness.open = businness.open
+    realmBusinness.close = businness.close
+    realmBusinness.day = businness.day
+    realmBusinness.state = businness.state
+    realmBusinness.like = businness.like
+    realmBusinness.favorite = businness.favorite
+    realmBusinness.c1 = businness.c1
+    realmBusinness.c2 = businness.c2
+    realmBusinness.t1 = businness.t1
+    realmBusinness.score = businness.score
+    
+
+    try! realm.write {
+        realm.add(realmBusinness)
+        print("add Ok??")
+    }
+    print("success")
 }
 
 

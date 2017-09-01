@@ -1,23 +1,7 @@
-//
-//  ContentViewController.swift
-//  Segmentio
-//
-//  Created by Dmitriy Demchenko
-//  Copyright © 2016 Yalantis Mobile. All rights reserved.
-//
-
 import UIKit
 import AlamofireImage
 
-private func yal_isPhone6() -> Bool {
-    let size = UIScreen.main.bounds.size
-    let minSide = min(size.height, size.width)
-    let maxSide = max(size.height, size.width)
-    return (fabs(minSide - 375.0) < 0.01) && (fabs(maxSide - 667.0) < 0.01)
-}
-
 class CafeTableViewCell: UITableViewCell {
-    //@IBOutlet fileprivate weak var hintLabel: UILabel!
     @IBOutlet fileprivate weak var hintImageView: UIImageView!
     @IBOutlet fileprivate weak var hintNameLabel: UILabel!
     @IBOutlet fileprivate weak var hintGPSLabel: UILabel!
@@ -27,22 +11,10 @@ class CafeTableViewCell: UITableViewCell {
     
 }
 
-class CafeViewController: UIViewController {
-    
-    //@IBOutlet fileprivate weak var cardNameLabel: UILabel!
+class CafeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
     @IBOutlet fileprivate weak var hintTableView: UITableView!
-    //@IBOutlet fileprivate weak var bottomCardConstraint: NSLayoutConstraint!
-    //@IBOutlet fileprivate weak var heightConstraint: NSLayoutConstraint!
-    
-    var disaster: Disaster?
-    fileprivate var hintLabel: [String]?
-    fileprivate var hintImage: UIImage?
-    fileprivate var hintNameLabel: String?
-    fileprivate var hintGPSLabel: String?
-    fileprivate var hintDistanceLabel: String?
-    fileprivate var hintGoodLabel: String?
-    fileprivate var hintRecommendationLabel: String?
-    
+
     class func create() -> UIViewController {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         return mainStoryboard.instantiateViewController(withIdentifier: String(describing: self)) as! CafeViewController
@@ -52,22 +24,19 @@ class CafeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hintTableView.allowsSelection = true
+        hintTableView.delegate = self
+        hintTableView.dataSource = self
     }
     
-}
-
-extension CafeViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return hints?.count ?? 0
-        print("Cafe count = \(Cafe.count)")
-        print("section = \(section)")
         return Cafe.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CafeTableViewCell
-
+        
         cell.hintNameLabel.text = Cafe[indexPath.row].name
         
         let fullUrl = "http://open8.vps.phps.kr/open8_re/shopImg/" + Cafe[indexPath.row].id + "/shopImg0.png"
@@ -85,4 +54,14 @@ extension CafeViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier : "Infomation") as! InfomationViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
+        viewController.indexNumber = indexPath.row
+        viewController.type = DEFINE_CAFE
+        
+        // select businness item DB add
+        addBusinness(businness: Cafe[indexPath.row])
+        print("businness item DB ADD")
+    }
 }

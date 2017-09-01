@@ -6,5 +6,5 @@ target 'Open8_AB' do
     pod 'Alamofire', '~> 4.4'
     pod 'Segmentio', '~> 2.1'
     pod 'AlamofireImage'
-    pod 'R.swift'
+    pod 'RealmSwift'
 end

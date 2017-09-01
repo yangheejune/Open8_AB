@@ -1,23 +1,7 @@
-//
-//  ContentViewController.swift
-//  Segmentio
-//
-//  Created by Dmitriy Demchenko
-//  Copyright © 2016 Yalantis Mobile. All rights reserved.
-//
-
 import UIKit
 import AlamofireImage
 
-private func yal_isPhone6() -> Bool {
-    let size = UIScreen.main.bounds.size
-    let minSide = min(size.height, size.width)
-    let maxSide = max(size.height, size.width)
-    return (fabs(minSide - 375.0) < 0.01) && (fabs(maxSide - 667.0) < 0.01)
-}
-
 class FashionAccTableViewCell: UITableViewCell {
-    //@IBOutlet fileprivate weak var hintLabel: UILabel!
     @IBOutlet fileprivate weak var hintImageView: UIImageView!
     @IBOutlet fileprivate weak var hintNameLabel: UILabel!
     @IBOutlet fileprivate weak var hintGPSLabel: UILabel!
@@ -27,22 +11,10 @@ class FashionAccTableViewCell: UITableViewCell {
     
 }
 
-class FashionAccViewController: UIViewController {
-    
-    //@IBOutlet fileprivate weak var cardNameLabel: UILabel!
+class FashionAccViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
     @IBOutlet fileprivate weak var hintTableView: UITableView!
-    //@IBOutlet fileprivate weak var bottomCardConstraint: NSLayoutConstraint!
-    //@IBOutlet fileprivate weak var heightConstraint: NSLayoutConstraint!
-    
-    var disaster: Disaster?
-    fileprivate var hintLabel: [String]?
-    fileprivate var hintImage: UIImage?
-    fileprivate var hintNameLabel: String?
-    fileprivate var hintGPSLabel: String?
-    fileprivate var hintDistanceLabel: String?
-    fileprivate var hintGoodLabel: String?
-    fileprivate var hintRecommendationLabel: String?
-    
+
     class func create() -> UIViewController {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         return mainStoryboard.instantiateViewController(withIdentifier: String(describing: self)) as! FashionAccViewController
@@ -52,22 +24,19 @@ class FashionAccViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hintTableView.allowsSelection = true
+        hintTableView.delegate = self
+        hintTableView.dataSource = self
     }
     
-}
-
-extension FashionAccViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return hints?.count ?? 0
-        print("FashionAcc.count = \(FashionAcc.count)")
-        print("section = \(section)")
         return FashionAcc.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FashionAccTableViewCell
-
+        
         cell.hintNameLabel.text = FashionAcc[indexPath.row].name
         
         let fullUrl = "http://open8.vps.phps.kr/open8_re/shopImg/" + FashionAcc[indexPath.row].id + "/shopImg0.png"
@@ -81,8 +50,19 @@ extension FashionAccViewController: UITableViewDataSource {
         let tvlat = Double(FashionAcc[indexPath.row].lat)
         let tvlng = Double(FashionAcc[indexPath.row].lng)
         cell.hintDistanceLabel.text = "\(distance(lat1: glat, lng1: glng, lat2: tvlat!, lng2: tvlng!))km"
-
+        
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier : "Infomation") as! InfomationViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
+        viewController.indexNumber = indexPath.row
+        viewController.type = DEFINE_FASHIONACC
+        
+        // select businness item DB add
+        addBusinness(businness: FashionAcc[indexPath.row])
+        print("businness item DB ADD")
+    }
+
 }

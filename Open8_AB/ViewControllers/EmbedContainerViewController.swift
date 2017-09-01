@@ -23,16 +23,6 @@ class EmbedContainerViewController: UIViewController, CLLocationManagerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 여기서 DB의 값을 획득해서 로컬의 sqlite에 저장하여 이후 데이터들은 sqlite에서 획득해 오기
-//        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-//        
-//        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-//        loadingIndicator.hidesWhenStopped = true
-//        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-//        loadingIndicator.startAnimating();
-//        
-//        alert.view.addSubview(loadingIndicator)
-//        present(alert, animated: true, completion: nil)
         
         // 위치 정보 받아와서 출력
         locationManager.delegate = self
@@ -40,7 +30,14 @@ class EmbedContainerViewController: UIViewController, CLLocationManagerDelegate 
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        GetBusinness()
+        DispatchQueue.global().async {
+        self.GetBusinness()
+        }
+        
+        wait( { return businness.isEmpty } ) {
+            print("완료")
+        }
+        
         sleep(5)
         
         Restaurant = self.setRestaurant(businnessInfo: businness)
@@ -108,6 +105,27 @@ class EmbedContainerViewController: UIViewController, CLLocationManagerDelegate 
     }
     
     // MARK: - Public functions
+    
+    func wait(_ waitContinuation: @escaping (()->Bool), compleation: @escaping (()->Void)) {
+        var wait = waitContinuation()
+        // 0.1초를 주기로 대기조건을 만족할 때 까지 대기함
+        let semaphore = DispatchSemaphore(value: 0)
+        DispatchQueue.global().async {
+            while wait {
+                semaphore.signal()
+                Thread.sleep(forTimeInterval: 0.1)
+                semaphore.wait()
+                DispatchQueue.main.async {
+                    wait = waitContinuation()
+                }
+            }
+            
+            // 대기조건을 만족하면 처리함
+            DispatchQueue.main.async {
+                compleation()
+            }
+        }
+    }
     
     func goLocation(latitude latitudeValue: CLLocationDegrees, longitude longitudeValue : CLLocationDegrees, delta span :Double)-> CLLocationCoordinate2D {
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longitudeValue)

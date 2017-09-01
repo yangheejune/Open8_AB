@@ -1,23 +1,7 @@
-//
-//  ContentViewController.swift
-//  Segmentio
-//
-//  Created by Dmitriy Demchenko
-//  Copyright © 2016 Yalantis Mobile. All rights reserved.
-//
-
 import UIKit
 import AlamofireImage
 
-private func yal_isPhone6() -> Bool {
-    let size = UIScreen.main.bounds.size
-    let minSide = min(size.height, size.width)
-    let maxSide = max(size.height, size.width)
-    return (fabs(minSide - 375.0) < 0.01) && (fabs(maxSide - 667.0) < 0.01)
-}
-
 class RestaurantTableViewCell: UITableViewCell {
-    //@IBOutlet fileprivate weak var hintLabel: UILabel!
     @IBOutlet fileprivate weak var hintImageView: UIImageView!
     @IBOutlet fileprivate weak var hintNameLabel: UILabel!
     @IBOutlet fileprivate weak var hintGPSLabel: UILabel!
@@ -27,21 +11,9 @@ class RestaurantTableViewCell: UITableViewCell {
     
 }
 
-class RestaurantViewController: UIViewController {
+class RestaurantViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    //@IBOutlet fileprivate weak var cardNameLabel: UILabel!
     @IBOutlet fileprivate weak var hintTableView: UITableView!
-    //@IBOutlet fileprivate weak var bottomCardConstraint: NSLayoutConstraint!
-    //@IBOutlet fileprivate weak var heightConstraint: NSLayoutConstraint!
-    
-    var disaster: Disaster?
-    fileprivate var hintLabel: [String]?
-    fileprivate var hintImage: UIImage?
-    fileprivate var hintNameLabel: String?
-    fileprivate var hintGPSLabel: String?
-    fileprivate var hintDistanceLabel: String?
-    fileprivate var hintGoodLabel: String?
-    fileprivate var hintRecommendationLabel: String?
     
     class func create() -> UIViewController {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -52,16 +24,13 @@ class RestaurantViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hintTableView.allowsSelection = true
+        hintTableView.delegate = self
+        hintTableView.dataSource = self
     }
     
-}
-
-extension RestaurantViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return hints?.count ?? 0
-        print("Restaurant count = \(Restaurant.count)")
-        print("section = \(section)")
         return Restaurant.count
     }
     
@@ -81,8 +50,19 @@ extension RestaurantViewController: UITableViewDataSource {
         let tvlat = Double(Restaurant[indexPath.row].lat)
         let tvlng = Double(Restaurant[indexPath.row].lng)
         cell.hintDistanceLabel.text = "\(distance(lat1: glat, lng1: glng, lat2: tvlat!, lng2: tvlng!))km"
-
+        
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier : "Infomation") as! InfomationViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
+        viewController.indexNumber = indexPath.row
+        viewController.type = DEFINE_ALL
+        
+        // select businness item DB add
+        addBusinness(businness: Restaurant[indexPath.row])
+        print("businness item DB ADD")
+    }
+
 }
