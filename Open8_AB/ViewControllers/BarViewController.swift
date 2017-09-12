@@ -31,9 +31,6 @@ class BarViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return hints?.count ?? 0
-        print("Bar count = \(Bar.count)")
-        print("section = \(section)")
         return Bar.count
     }
     

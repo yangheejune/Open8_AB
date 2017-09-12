@@ -25,6 +25,14 @@ class MainHomeViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Restaurant = self.setRestaurant(businnessInfo: businness)
+        Cafe       = self.setCafe(businnessInfo: businness)
+        Bar        = self.setBar(businnessInfo: businness)
+        HairNail   = self.setHairNail(businnessInfo: businness)
+        BodyHealth = self.setBodyHealth(businnessInfo: businness)
+        FashionAcc = self.setFashionAcc(businnessInfo: businness)
+
+        
         hintTableView.allowsSelection = true
         hintTableView.delegate = self
         hintTableView.dataSource = self
@@ -65,5 +73,97 @@ class MainHomeViewController: UIViewController, UITableViewDataSource, UITableVi
         addBusinness(businness: businness[indexPath.row])
         print("businness item DB ADD")
     }
+    
+    // 음식점 획득
+    func setRestaurant(businnessInfo:Array<BusinnessItem>) -> Array<BusinnessItem>
+    {
+        var Restaurant = [BusinnessItem]()
+        for index in 0...businnessInfo.count - 1
+        {
+            if DEFINE_RESTAURANT == Int(businnessInfo[index].type)
+            {
+                Restaurant.append(businnessInfo[index])
+            }
+        }
+        print("Restaurant Count = \(Restaurant.count)")
+        return Restaurant
+    }
+    
+    // 카페 획득
+    func setCafe(businnessInfo:Array<BusinnessItem>) -> Array<BusinnessItem>
+    {
+        var Cafe = [BusinnessItem]()
+        for index in 0...businnessInfo.count - 1
+        {
+            if DEFINE_CAFE == Int(businnessInfo[index].type)
+            {
+                Cafe.append(businnessInfo[index])
+            }
+        }
+        print("Cafe Count = \(Cafe.count)")
+        return Cafe
+    }
+    
+    // 술집 획득
+    func setBar(businnessInfo:Array<BusinnessItem>) -> Array<BusinnessItem>
+    {
+        var Bar = [BusinnessItem]()
+        for index in 0...businnessInfo.count - 1
+        {
+            if DEFINE_BAR == Int(businnessInfo[index].type)
+            {
+                Bar.append(businnessInfo[index])
+            }
+        }
+        print("Bar Count = \(Bar.count)")
+        return Bar
+    }
+    
+    // 헤어네일 획득
+    func setHairNail(businnessInfo:Array<BusinnessItem>) -> Array<BusinnessItem>
+    {
+        var HairNail = [BusinnessItem]()
+        for index in 0...businnessInfo.count - 1
+        {
+            if DEFINE_HAIRNAIL == Int(businnessInfo[index].type)
+            {
+                HairNail.append(businnessInfo[index])
+            }
+        }
+        print("HairNail Count = \(HairNail.count)")
+        return HairNail
+    }
+    
+    
+    // 패션악세사리 획득
+    func setFashionAcc(businnessInfo:Array<BusinnessItem>) -> Array<BusinnessItem>
+    {
+        var FashionAcc = [BusinnessItem]()
+        for index in 0...businnessInfo.count - 1
+        {
+            if DEFINE_FASHIONACC == Int(businnessInfo[index].type)
+            {
+                FashionAcc.append(businnessInfo[index])
+            }
+        }
+        print("FashionAcc Count = \(FashionAcc.count)")
+        return FashionAcc
+    }
+    
+    // 바디헬스 획득
+    func setBodyHealth(businnessInfo:Array<BusinnessItem>) -> Array<BusinnessItem>
+    {
+        var BodyHealth = [BusinnessItem]()
+        for index in 0...businnessInfo.count - 1
+        {
+            if DEFINE_BODYHEALTH == Int(businnessInfo[index].type)
+            {
+                BodyHealth.append(businnessInfo[index])
+            }
+        }
+        print("BodyHealth Count = \(BodyHealth.count)")
+        return BodyHealth
+    }
+
 
 }

@@ -34,6 +34,7 @@
 		88EEF6FB1F331EC5008059E6 /* FashionAccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6F51F331EC5008059E6 /* FashionAccViewController.swift */; };
 		88EEF6FC1F331EC5008059E6 /* HairNailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6F61F331EC5008059E6 /* HairNailViewController.swift */; };
 		88EEF6FD1F331EC5008059E6 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6F71F331EC5008059E6 /* RestaurantViewController.swift */; };
+		AB467B551F5E867E002D8DB7 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB467B541F5E867E002D8DB7 /* LaunchScreenViewController.swift */; };
 		ABE0434F1F59B59B006D5045 /* InfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE0434E1F59B59B006D5045 /* InfomationViewController.swift */; };
 		ABE043511F59B5A6006D5045 /* RecentlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE043501F59B5A6006D5045 /* RecentlyViewController.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		88EEF6F51F331EC5008059E6 /* FashionAccViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FashionAccViewController.swift; sourceTree = "<group>"; };
 		88EEF6F61F331EC5008059E6 /* HairNailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairNailViewController.swift; sourceTree = "<group>"; };
 		88EEF6F71F331EC5008059E6 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		AB467B541F5E867E002D8DB7 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		ABE0434E1F59B59B006D5045 /* InfomationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfomationViewController.swift; sourceTree = "<group>"; };
 		ABE043501F59B5A6006D5045 /* RecentlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentlyViewController.swift; sourceTree = "<group>"; };
 		EB5E3479697CC2B9DEA06502 /* Pods_Open8_AB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Open8_AB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 				880E3D691F1DE0F400C3566C /* HomeViewController.swift */,
 				880E3D6A1F1DE0F400C3566C /* SideMenuViewController.swift */,
 				880E3D6B1F1DE0F400C3566C /* ViewController.swift */,
+				AB467B541F5E867E002D8DB7 /* LaunchScreenViewController.swift */,
 			);
 			name = ViewControllers;
 			path = Open8_AB/ViewControllers;
@@ -437,6 +440,7 @@
 				88CB7B6F1F32CE7900E39A24 /* globalVariables.swift in Sources */,
 				880E3D5F1F1DE06100C3566C /* Hints.swift in Sources */,
 				88EEF6FA1F331EC5008059E6 /* CafeViewController.swift in Sources */,
+				AB467B551F5E867E002D8DB7 /* LaunchScreenViewController.swift in Sources */,
 				880E3D6D1F1DE0F400C3566C /* EmbedContainerViewController.swift in Sources */,
 				ABE0434F1F59B59B006D5045 /* InfomationViewController.swift in Sources */,
 				880E3D6E1F1DE0F400C3566C /* ExampleViewController.swift in Sources */,
@@ -565,6 +569,7 @@
 			baseConfigurationReference = 55522ECD15F3F8728CCF6A15 /* Pods-Open8_AB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = S66VGVB29H;
 				INFOPLIST_FILE = Open8_AB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -579,6 +584,7 @@
 			baseConfigurationReference = 25A6810F80B5818C87942EA1 /* Pods-Open8_AB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = S66VGVB29H;
 				INFOPLIST_FILE = Open8_AB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
